@@ -27,11 +27,20 @@ export default function Department(props) {
             </i>
           </button>
         </Link>
-        <button data-toggle="tooltip" title="Trash" className="pd-setting-ed">
-          <i className="fa fa-trash-o" aria-hidden="true">
-            Chi tiết{" "}
-          </i>
-        </button>
+        <Link to={`/department-employee/${props.department._id}`}>
+          <button data-toggle="tooltip" title="Trash" className="pd-setting-ed">
+            <i className="fa fa-trash-o" aria-hidden="true">
+              nhân viên
+            </i>
+          </button>
+        </Link>
+        <Link to={`/department-detail/${props.department._id}`}>
+          <button data-toggle="tooltip" title="Trash" className="pd-setting-ed">
+            <i className="fa fa-trash-o" aria-hidden="true">
+              Chi tiết
+            </i>
+          </button>
+        </Link>
         <button
           data-toggle="tooltip"
           title="Trash"

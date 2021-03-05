@@ -1,16 +1,19 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Link } from "react-router-dom";
 import "./ListEmployee.css";
-export default function Employee() {
-  var id = 7;
+export default function Employee(props) {
+  var employee = props.employee;
+  console.log("EMployye : ", employee);
+  var id = employee._id;
   return (
     <tr data-expanded="true">
-      <td>2</td>
-      <td>Nguyễn văn Thái</td>
-      <td>Ảnh</td>
-      <td>Giám đốc </td>
-      <th>0392483272</th>
-      <td>NGuyễn Văn Phong99</td>
+      <td>{props.index + 1}</td>
+      <td>{employee.name} </td>
+      <td>{employee.photo}</td>
+      <td>{employee.jobtitle} </td>
+      <th>{employee.cellphone}</th>
+      <td>{employee.email}</td>
+      <td>{employee.department_id.name}</td>
       <td>
         <Link to={`/employee-edit/${id}`}>
           <button data-toggle="tooltip" title="Edit" class="pd-setting-ed">

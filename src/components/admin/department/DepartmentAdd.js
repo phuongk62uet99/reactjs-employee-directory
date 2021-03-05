@@ -11,6 +11,7 @@ export default function DepartmentAdd() {
     manager: "",
   };
   const onSubmit = (data) => {
+    console.log("Data : ", data);
     fetch(`http://localhost:3000/department`, {
       method: "POST",
       body: JSON.stringify(data),
@@ -36,6 +37,69 @@ export default function DepartmentAdd() {
             <div className="panel-body">
               <div className="form">
                 <form
+                  className="cmxform form-horizontal "
+                  onSubmit={handleSubmit(onSubmit)}
+                >
+                  <div className="form-group ">
+                    <label
+                      htmlFor="firstname"
+                      className="control-label col-lg-3"
+                    >
+                      Tên phòng
+                    </label>
+                    <div className="col-lg-6">
+                      <input
+                        className=" form-control"
+                        name="name"
+                        type="text"
+                        ref={register}
+                      />
+                    </div>
+                  </div>
+                  <div className="form-group ">
+                    <label
+                      htmlFor="lastname"
+                      className="control-label col-lg-3"
+                    >
+                      Số điện thoại
+                    </label>
+                    <div className="col-lg-6">
+                      <input
+                        className=" form-control"
+                        name="officephone"
+                        type="text"
+                        ref={register}
+                      />
+                    </div>
+                  </div>
+                  <div className="form-group ">
+                    <label
+                      htmlFor="username"
+                      className="control-label col-lg-3"
+                    >
+                      Số lượng
+                    </label>
+                    <div className="col-lg-6">
+                      <input
+                        className="form-control "
+                        name="manager"
+                        type="text"
+                        ref={register}
+                      />
+                    </div>
+                  </div>
+                  <div className="form-group">
+                    <div className="col-lg-offset-3 col-lg-6">
+                      <button className="btn btn-primary" type="submit">
+                        Save
+                      </button>
+                      <button className="btn btn-default" type="button">
+                        <Link to="/books">Cancel</Link>
+                      </button>
+                    </div>
+                  </div>
+                </form>
+                {/* <form
                   className="cmxform form-horizontal "
                   onSubmit={handleSubmit(onSubmit)}
                 >
@@ -105,7 +169,7 @@ export default function DepartmentAdd() {
                       </Link>
                     </div>
                   </div>
-                </form>
+                </form> */}
               </div>
             </div>
           </section>

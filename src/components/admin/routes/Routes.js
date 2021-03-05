@@ -1,8 +1,9 @@
 import LoginContainer from "../login/LoginContainer";
 import Paths from "./Paths";
 import ListDepartments from "../department/ListDepartments";
-import DetailDepartment from "../department/DetailDepartment";
+import DepartmentEmployee from "../department/DepartmentEmployee";
 import EditDepartment from "../department/EditDepartment";
+import DepartmentDetail from "../department/DepartmentDetail";
 import DepartmentAdd from "../department/DepartmentAdd";
 import DetailEmployee from "../employee/DetailEmployee";
 import EditEmployee from "../employee/EditEmployee";
@@ -24,12 +25,16 @@ const routes = [
     main: () => <ListDepartments></ListDepartments>,
   },
   {
-    path: "/department-detail",
-    main: () => <DetailDepartment></DetailDepartment>,
+    path: "/department-employee/:id",
+    main: () => <DepartmentEmployee></DepartmentEmployee>,
   },
   {
     path: "/department-edit/:id",
     main: () => <EditDepartment></EditDepartment>,
+  },
+  {
+    path: "/department-detail/:id",
+    main: () => <DepartmentDetail></DepartmentDetail>,
   },
   {
     path: "/department-add",

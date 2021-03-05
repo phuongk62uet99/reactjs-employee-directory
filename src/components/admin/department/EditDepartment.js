@@ -102,7 +102,7 @@ export default function EditDepartment({ match }) {
                         Save
                       </button>
                       <button className="btn btn-default" type="button">
-                        <Link to="/books">Cancel</Link>
+                        <Link to="/departments">Cancel</Link>
                       </button>
                     </div>
                   </div>
